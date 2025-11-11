@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        .page-container {
+            margin-bottom: 40px;
+            text-align: center;
+            padding: 20px;
+            background: #fafafa;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
+        }
+        .page-container:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .page-image {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        .page-image:hover {
+            transform: scale(1.02);
+        }
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        h3 {
+            color: #555;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        .page-count {
+            color: #888;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+        .navigation {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .nav-button {
+            display: block;
+            padding: 8px 12px;
+            margin: 2px 0;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9em;
+            transition: background 0.2s ease;
+        }
+        .nav-button:hover {
+            background: #5a67d8;
+        }
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .container {
+                padding: 20px;
+            }
+            .navigation {
+                position: static;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <a href="#page-1" class="nav-button">Page 1</a><a href="#page-2" class="nav-button">Page 2</a><a href="#page-3" class="nav-button">Page 3</a><a href="#page-4" class="nav-button">Page 4</a><a href="#page-5" class="nav-button">Page 5</a><a href="#page-6" class="nav-button">Page 6</a><a href="#page-7" class="nav-button">Page 7</a><a href="#page-8" class="nav-button">Page 8</a><a href="#page-9" class="nav-button">Page 9</a><a href="#page-10" class="nav-button">Page 10</a><a href="#page-11" class="nav-button">Page 11</a><a href="#page-12" class="nav-button">Page 12</a><a href="#page-13" class="nav-button">Page 13</a><a href="#page-14" class="nav-button">Page 14</a><a href="#page-15" class="nav-button">Page 15</a><a href="#page-16" class="nav-button">Page 16</a>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1>PDF Viewer</h1>
+            <p class="page-count">Total Pages: 16</p>
+        </div>
+        
+        <div class="page-container" id="page-1">
+            <h3>Page 1</h3>
+            <img src="./images/page-1.png" alt="Page 1" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-2">
+            <h3>Page 2</h3>
+            <img src="./images/page-2.png" alt="Page 2" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-3">
+            <h3>Page 3</h3>
+            <img src="./images/page-3.png" alt="Page 3" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-4">
+            <h3>Page 4</h3>
+            <img src="./images/page-4.png" alt="Page 4" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-5">
+            <h3>Page 5</h3>
+            <img src="./images/page-5.png" alt="Page 5" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-6">
+            <h3>Page 6</h3>
+            <img src="./images/page-6.png" alt="Page 6" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-7">
+            <h3>Page 7</h3>
+            <img src="./images/page-7.png" alt="Page 7" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-8">
+            <h3>Page 8</h3>
+            <img src="./images/page-8.png" alt="Page 8" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-9">
+            <h3>Page 9</h3>
+            <img src="./images/page-9.png" alt="Page 9" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-10">
+            <h3>Page 10</h3>
+            <img src="./images/page-10.png" alt="Page 10" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-11">
+            <h3>Page 11</h3>
+            <img src="./images/page-11.png" alt="Page 11" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-12">
+            <h3>Page 12</h3>
+            <img src="./images/page-12.png" alt="Page 12" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-13">
+            <h3>Page 13</h3>
+            <img src="./images/page-13.png" alt="Page 13" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-14">
+            <h3>Page 14</h3>
+            <img src="./images/page-14.png" alt="Page 14" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-15">
+            <h3>Page 15</h3>
+            <img src="./images/page-15.png" alt="Page 15" class="page-image" loading="lazy" />
+          </div><div class="page-container" id="page-16">
+            <h3>Page 16</h3>
+            <img src="./images/page-16.png" alt="Page 16" class="page-image" loading="lazy" />
+          </div>
+    </div>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation
+        document.querySelectorAll('.page-image').forEach(img => {
+            img.addEventListener('load', function() {
+                this.style.opacity = '1';
+            });
+            img.style.opacity = '0';
+            img.style.transition = 'opacity 0.3s ease';
+        });
+    </script>
+</body>
+</html>
